@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Abd Wafiee Abd Wahab">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">HomeViewer</a>
+        </div>
+      </div>
+    </nav>
+    <div class="form-actions" id="registerDiv">
+      <form action="./newUser.php" class="form-signin" id="registerForm" method="post">
+        <h2 class="form-signin-heading" id="regTitle">Register</h2>
+        <label for="inputFirstName" class="sr-only">First Name</label>
+        <input type="text" name="first_name" placeholder="First Name" required autofocus><br></br>
+        <label for="inputLastName" class="sr-only">Last Name</label>
+        <input type="text" name="last_name" placeholder="Last Name" required autofocus><br></br>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="email" placeholder="Email Address" required autofocus><br></br>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password" placeholder="Password" required autofocus><br></br>
+        <label for="inputHomePreference" class="sr-only">Home Preference</label>
+        <select class="form-control" id="homePreference" name="homeType" required autofocus>
+          <option value="">Select the type of home: House or Apartment</option>
+          <option value="house">House</option>
+          <option value="apartment">Apartment</option>
+        </select>
+        <button class="btn btn-sm btn-primary" type="submit" id="registerButton" name="submit">Register</button>
+      </form>
+      <p id="login">Already have an account? Login <a href="./index.html">here.</a></p>
+    </div>
+  </body>
+</html>

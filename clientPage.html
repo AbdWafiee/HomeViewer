@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Abd Wafiee Abd Wahab">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">HomeViewer</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="./clientPage.html">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">View Sample Homes <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="./apartments/apartment_alfa/apartmentAlfa.html">Apartment Alfa</a></li>
+            </ul>
+          </li>
+          <li><a id="logout" href="./includes/logout.php">LOGOUT</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container" id="homeList">
+      <h1 id="homeName">Your Homes: </h1>
+      <table class='table table-bordered'>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th># of bedrooms</th>
+            <th>Price</th>
+            <th>Furnished?</th>
+            <th>View Model</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </table>
+    </div>
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+          document.getElementById("tableBody").innerHTML = this.responseText;
+        }
+      }
+      xmlhttp.open("GET", "./includes/displayHomes.php");
+      xmlhttp.send();
+    </script>
+    <footer class="text-center">
+      <p>Created by Abd Wafiee Abd Wahab</p>
+    </footer>
+  </body>
+</html>
